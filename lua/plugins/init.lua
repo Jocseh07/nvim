@@ -1,7 +1,8 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
+    lazy = false,
+    event = 'BufWritePre', -- uncomment for format on save
     config = function()
       require "configs.conform"
     end,
@@ -15,25 +16,31 @@ return {
       require "configs.lspconfig"
     end,
   },
-  
+
   {
-  	"williamboman/mason.nvim",
-  	opts = {
-  		ensure_installed = {
-  			"lua-language-server", "stylua",
-  			"html-lsp", "css-lsp" , "prettierd"
-  		},
-  	},
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "lua-language-server",
+        "stylua",
+        "html-lsp",
+        "css-lsp",
+        "prettierd",
+      },
+    },
   },
   --
   {
-  	"nvim-treesitter/nvim-treesitter",
-  	opts = {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
       auto_install = true,
-  		ensure_installed = {
-  			"vim", "lua", "vimdoc",
-       "html", "css"
-  		},
-  	},
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+      },
+    },
   },
 }
